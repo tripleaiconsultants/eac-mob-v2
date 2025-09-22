@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.A.C Insurance - Welcome</title>
+    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+<script src="https://files.bpcontent.cloud/2025/08/31/06/20250831060030-72DVBA9B.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #0d0929 30%, #08061b 70%, #000000 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+            padding: 5vh 5vw;
+            transform-origin: center center;
+        }
+
+        .loader-container.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Mobile-optimized background pattern */
+        .tech-pattern-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(193, 154, 107, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(193, 154, 107, 0.06) 1px, transparent 1px),
+                radial-gradient(circle at 25% 25%, rgba(193, 154, 107, 0.08) 2px, transparent 2px);
+            background-size: 20px 20px, 20px 20px, 40px 40px;
+            animation: techPatternMove 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes techPatternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+
+        /* Optimized particles for mobile */
+        .quantum-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .quantum-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, rgba(193, 154, 107, 0.4), transparent);
+            border-radius: 50%;
+            animation: quantumFloat 8s ease-in-out infinite;
+            box-shadow: 0 0 8px rgba(193, 154, 107, 0.2);
+        }
+
+        .quantum-particle:nth-child(1) { left: 15%; top: 20%; animation-delay: 0s; }
+        .quantum-particle:nth-child(2) { left: 85%; top: 30%; animation-delay: 1.5s; }
+        .quantum-particle:nth-child(3) { left: 25%; top: 75%; animation-delay: 3s; }
+        .quantum-particle:nth-child(4) { left: 75%; top: 80%; animation-delay: 4.5s; }
+        .quantum-particle:nth-child(5) { left: 50%; top: 10%; animation-delay: 6s; }
+
+        @keyframes quantumFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+            33% { transform: translateY(-15px) scale(1.1); opacity: 0.8; }
+            66% { transform: translateY(10px) scale(0.9); opacity: 0.6; }
+        }
+
+        .top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInDown 1.2s ease-out;
+    flex: 0 0 auto;
+    text-align: center;
+    margin-top: 4vh; /* <-- ADD this */
+    margin-bottom: 2vh;
+}
+
+
+        .company-name {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            font-size: clamp(1.2rem, 5vw, 2.2rem);
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.05em;
+            text-shadow:
+                0 0 8px rgba(193, 154, 107, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+            animation: textShimmer 3s ease-in-out infinite;
+            margin-bottom: 1vh;
+            max-width: 90vw;
+            word-wrap: break-word;
+        }
+
+        .tagline {
+            color: rgba(193, 154, 107, 0.9);
+            font-size: clamp(0.8rem, 3vw, 1.2rem);
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+        }
+
+        @keyframes textShimmer {
+            0%, 100% {
+                text-shadow: 0 0 8px rgba(193, 154, 107, 0.3), 0 2px 8px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 12px rgba(193, 154, 107, 0.5), 0 2px 8px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        /* Center section - Mobile optimized logo */
+        .center-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: logoEntrance 1.8s ease-out 0.2s both;
+            flex: 1;
+            max-height: 50vh;
+        }
+
+        .logo-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(200px, 50vw, 350px);
+            height: clamp(200px, 50vw, 350px);
+            background: rgba(13, 9, 41, 0.2);
+            border: 2px solid rgba(193, 154, 107, 0.3);
+            border-radius: 15px;
+            box-shadow:
+                0 0 20px rgba(193, 154, 107, 0.2),
+                inset 0 0 20px rgba(0, 0, 0, 0.3);
+            animation: logoPulse 4s ease-in-out infinite;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg,
+                transparent,
+                rgba(193, 154, 107, 0.2),
+                transparent,
+                rgba(193, 154, 107, 0.15),
+                transparent
+            );
+            border-radius: 17px;
+            animation: borderRotate 8s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes borderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes logoPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(193, 154, 107, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.3);
+                border-color: rgba(193, 154, 107, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(193, 154, 107, 0.4), inset 0 0 25px rgba(0, 0, 0, 0.2);
+                border-color: rgba(193, 154, 107, 0.5);
+            }
+        }
+
+        .logo-container img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            filter: brightness(1.1) contrast(1.1) drop-shadow(0 0 8px rgba(193, 154, 107, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        /* Fallback for when logo is not available */
+        .logo-placeholder {
+            width: 80%;
+            height: 80%;
+            background: linear-gradient(135deg,
+                rgba(193, 154, 107, 0.2) 0%,
+                rgba(193, 154, 107, 0.1) 50%,
+                rgba(193, 154, 107, 0.2) 100%
+            );
+            border: 1px solid rgba(193, 154, 107, 0.4);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(193, 154, 107, 0.8);
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 8px rgba(193, 154, 107, 0.3);
+        }
+
+        .bottom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1.2s ease-out 0.4s both;
+    flex: 0 0 auto;
+    margin-top: 1vh; /* <-- was 2vh, now reduced */
+}
+
+
+        .progress-container {
+            width: clamp(250px, 80vw, 400px);
+            margin-bottom: 3vh;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(26, 20, 73, 0.4);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(193, 154, 107, 0.3);
+            box-shadow: 0 0 10px rgba(26, 20, 73, 0.4);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg,
+                rgba(193, 154, 107, 0.8) 0%,
+                rgba(193, 154, 107, 1) 50%,
+                rgba(193, 154, 107, 0.8) 100%);
+            border-radius: 3px;
+            width: 0%;
+            animation: progressFill 4s ease-out forwards;
+            position: relative;
+            box-shadow: 0 0 12px rgba(193, 154, 107, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: progressSweep 2s ease-in-out infinite;
+        }
+
+        @keyframes progressSweep {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .progress-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 2vh 0;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(193, 154, 107, 0.3);
+            border-radius: 50%;
+            animation: dotActivate 4s ease-out forwards;
+            box-shadow: 0 0 6px rgba(193, 154, 107, 0.3);
+        }
+
+        .progress-dot:nth-child(1) { animation-delay: 0.4s; }
+        .progress-dot:nth-child(2) { animation-delay: 0.8s; }
+        .progress-dot:nth-child(3) { animation-delay: 1.4s; }
+        .progress-dot:nth-child(4) { animation-delay: 2.2s; }
+        .progress-dot:nth-child(5) { animation-delay: 3s; }
+
+        @keyframes dotActivate {
+            to {
+                background: rgba(193, 154, 107, 1);
+                box-shadow: 0 0 12px rgba(193, 154, 107, 0.8);
+            }
+        }
+
+        .status-text {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            margin-bottom: 2vh;
+            text-transform: uppercase;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1vh;
+            text-align: center;
+        }
+
+        .contact-primary {
+            color: rgba(193, 154, 107, 0.9);
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            font-weight: 600;
+            text-shadow: 0 0 6px rgba(193, 154, 107, 0.4);
+            letter-spacing: 0.02em;
+        }
+
+        .contact-secondary {
+            font-size: clamp(0.8rem, 3vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.7);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes logoEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes progressFill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* Mobile-specific optimizations */
+        @media (max-width: 768px) {
+            .loader-container {
+                padding: 3vh 4vw;
+            }
+            
+            .company-name {
+                font-size: clamp(1rem, 4.5vw, 1.8rem);
+                letter-spacing: 0.03em;
+            }
+            
+            .tagline {
+                font-size: clamp(0.7rem, 2.5vw, 1rem);
+            }
+            
+            .logo-container {
+                width: clamp(180px, 45vw, 280px);
+                height: clamp(180px, 45vw, 280px);
+                border-radius: 12px;
+            }
+            
+            .status-text {
+                font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+            }
+            
+            .contact-primary {
+                font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+            }
+            
+            .contact-secondary {
+                font-size: clamp(0.7rem, 2.8vw, 0.95rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .loader-container {
+                padding: 2vh 3vw;
+            }
+            
+            .company-name {
+                font-size: clamp(0.9rem, 4vw, 1.5rem);
+                margin-bottom: 0.5vh;
+            }
+            
+            .tagline {
+                font-size: clamp(0.65rem, 2.2vw, 0.85rem);
+            }
+            
+            .logo-container {
+                width: clamp(150px, 40vw, 220px);
+                height: clamp(150px, 40vw, 220px);
+                border-radius: 10px;
+                border-width: 1.5px;
+            }
+            
+            .progress-container {
+                width: clamp(200px, 85vw, 320px);
+                margin-bottom: 2vh;
+            }
+            
+            .progress-bar {
+                height: 5px;
+            }
+            
+            .progress-dot {
+                width: 6px;
+                height: 6px;
+            }
+            
+            .progress-indicators {
+                gap: 6px;
+            }
+            
+            .status-text {
+                font-size: clamp(0.8rem, 3.2vw, 1rem);
+                margin-bottom: 1.5vh;
+            }
+            
+            .contact-primary {
+                font-size: clamp(0.8rem, 3.2vw, 1rem);
+            }
+            
+            .contact-secondary {
+                font-size: clamp(0.65rem, 2.5vw, 0.85rem);
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .loader-container {
+                padding: 2vh 5vw;
+            }
+            
+            .top-section {
+                margin-bottom: 1vh;
+            }
+            
+            .center-section {
+                max-height: 35vh;
+            }
+            
+            .logo-container {
+                width: clamp(120px, 25vh, 200px);
+                height: clamp(120px, 25vh, 200px);
+            }
+            
+            .bottom-section {
+                margin-top: 1vh;
+            }
+            
+            .progress-container {
+                margin-bottom: 1.5vh;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .quantum-particle {
+                animation-duration: 10s; /* Slower for better performance on mobile */
+            }
+            
+            .tech-pattern-bg {
+                animation-duration: 25s; /* Slower for better performance */
+            }
+        }
+
+        /* High DPI display optimization */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .logo-container img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container" id="loader">
+        <div class="tech-pattern-bg"></div>
+
+        <div class="quantum-particles">
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+            <div class="quantum-particle"></div>
+        </div>
+
+        <!-- Top Section: Company Name -->
+        <div class="top-section">
+            <h1 class="company-name">E.A.C Insurance Agencies & Consultants LTD</h1>
+            <p class="tagline">Different Because We Care</p>
+        </div>
+
+        <!-- Center Section: Logo -->
+        <div class="center-section">
+            <div class="logo-container">
+                <img src="assets/logoCamelv2.png" alt="E.A.C Insurance Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">EAC</div>
+            </div>
+        </div>
+
+        <!-- Bottom Section: Progress and Contact -->
+        <div class="bottom-section">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-indicators">
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                </div>
+            </div>
+
+            <div class="status-text">Loading Premium Solutions...</div>
+
+            <div class="contact-info">
+                <div class="contact-primary">Direct Line: +357 96660113</div>
+                <div class="contact-secondary">Available 24/7 for Claims & Emergencies</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loader = document.getElementById('loader');
+        const statusText = document.querySelector('.status-text');
+
+        const professionalMessages = [
+            'Loading Premium Solutions...',
+            'Connecting to Secure Systems...',
+            'Welcome to E.A.C Insurance'
+        ];
+
+        let messageIndex = 0;
+
+        const updateMessage = () => {
+            if (messageIndex < professionalMessages.length - 1) {
+                messageIndex++;
+                statusText.textContent = professionalMessages[messageIndex];
+                setTimeout(updateMessage, 1200); // Slightly faster for mobile
+            }
+        };
+
+        setTimeout(updateMessage, 1200);
+
+        // Redirect after 4 seconds (slightly faster for mobile)
+        setTimeout(() => {
+            loader.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = 'main.html';
+            }, 500);
+        }, 4000);
+
+        // Skip with Escape key (development)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                window.location.href = 'main.html';
+            }
+        });
+
+        // Enhanced but performance-optimized particle interaction for mobile
+        let mouseMoveThrottle = false;
+        document.addEventListener('mousemove', (e) => {
+            if (mouseMoveThrottle) return;
+            mouseMoveThrottle = true;
+            
+            setTimeout(() => {
+                const particles = document.querySelectorAll('.quantum-particle');
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+
+                particles.forEach((particle, index) => {
+                    const intensity = (index + 1) * 0.2; // Reduced intensity for mobile
+                    const x = mouseX * intensity * 5; // Reduced movement range
+                    const y = mouseY * intensity * 5;
+                    particle.style.transform = `translate(${x}px, ${y}px)`;
+                });
+                
+                mouseMoveThrottle = false;
+            }, 16); // ~60fps throttling
+        });
+
+        // Touch interaction for mobile
+        document.addEventListener('touchmove', (e) => {
+            e.preventDefault(); // Prevent scrolling
+            if (e.touches.length > 0) {
+                const touch = e.touches[0];
+                const mouseX = touch.clientX / window.innerWidth;
+                const mouseY = touch.clientY / window.innerHeight;
+
+                const particles = document.querySelectorAll('.quantum-particle');
+                particles.forEach((particle, index) => {
+                    const intensity = (index + 1) * 0.15;
+                    const x = mouseX * intensity * 3;
+                    const y = mouseY * intensity * 3;
+                    particle.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            }
+        }, { passive: false });
+
+        // Reset particles on touch end
+        document.addEventListener('touchend', () => {
+            const particles = document.querySelectorAll('.quantum-particle');
+            particles.forEach(particle => {
+                particle.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>

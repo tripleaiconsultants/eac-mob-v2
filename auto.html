@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/08/31/06/20250831060030-72DVBA9B.js" defer></script>
+    <title>Ασφάλεια Αυτοκινήτου Κύπρου | E.A.C Insurance | Εξοικονομήστε 25-40%</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Force square corners for main content elements */
+        .slider-container,
+        .slide-overlay,
+        .service-card,
+        .testimonial,
+        .popup,
+        .popup input,
+        .popup-btn,
+        .auto-highlight-box,
+        .auto-box-inner,
+        .auto-info-paragraph,
+        .auto-ceo-section,
+        footer,
+        header,
+        nav,
+        .content {
+            border-radius: 0 !important;
+        }
+
+        /* Keep circular/rounded elements as they are */
+        .social-icons a,
+        .slider-dot,
+        .slider-arrow {
+            border-radius: 50% !important;
+        }
+
+        body {
+            background-color: #0d0929;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header and Navigation - Same as first file */
+        header {
+            background-color: #08061b;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid #C19A6B;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .logo-container img {
+            height: 80px;
+            width: auto;
+        }
+
+        /* Hamburger Menu Button */
+        .hamburger-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .hamburger-btn:hover {
+            color: #C19A6B;
+        }
+
+        /* Navigation Menu */
+        nav {
+            margin-top: 10px;
+            width: 100%;
+            position: relative;
+        }
+
+        nav ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #08061b;
+            border: 1px solid rgba(193, 154, 107, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+
+        nav ul.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav li {
+            text-align: left;
+            border-bottom: 1px solid rgba(193, 154, 107, 0.1);
+        }
+
+        nav li:last-child {
+            border-bottom: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            background: linear-gradient(to right, rgba(87, 65, 48, 0.4), rgba(87, 65, 48, 0.2));
+            color: #C19A6B;
+            padding-left: 30px;
+        }
+
+        nav a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Section 1 - Auto Highlight Box - Mobile Optimized */
+        .auto-highlight-box {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 30px 15px;
+            position: relative;
+        }
+
+        .corner-box {
+            position: relative;
+            padding: 15px;
+        }
+
+        .corner-box::before,
+        .corner-box::after,
+        .corner-box div::before,
+        .corner-box div::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #C19A6B;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .corner-box::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-box::after {
+            top: 0;
+            right: 0;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-box div::before {
+            bottom: 0;
+            left: 0;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-box div::after {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        .auto-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .auto-image {
+            flex: 1;
+            min-width: 200px;
+            max-width: 100%;
+        }
+
+        .auto-image img {
+            width: 100%;
+            height: auto;
+            max-width: 250px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .auto-text {
+            flex: 1;
+            color: #fff;
+        }
+
+        .glow-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #e0c9a7;
+            text-shadow: 
+                0 0 2px rgba(224,201,167,0.6),
+                0 0 6px rgba(224,201,167,0.4);
+            transform: perspective(500px) translateZ(15px);
+        }
+
+        .auto-text p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #fff;
+            text-shadow: 0 0 6px rgba(255,255,255,0.2);
+        }
+
+        /* Section 2 - Background Matching First File */
+        .auto-info-section {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1449, #241b5c);
+            padding: 40px 15px 50px;
+            box-shadow:
+                inset 0 8px 12px rgba(0, 0, 0, 0.35),
+                inset 0 -8px 12px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #C19A6B, transparent);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .auto-info-inner {
+            max-width: 100%;
+            margin: 0 auto;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: center;
+            color: #f5f5f5;
+        }
+
+        /* Section 3 - CEO Section - Same styling as first file */
+        .auto-ceo-section {
+            max-width: 90%;
+            margin: 50px auto;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        .auto-ceo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .auto-ceo-image {
+            flex: 1;
+            min-width: 250px;
+            max-width: 100%;
+        }
+
+        .auto-ceo-image img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .auto-ceo-text {
+            flex: 1;
+            color: #fff;
+        }
+
+        .auto-ceo-text p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 0 0 6px rgba(255,255,255,0.2);
+        }
+
+        /* Footer - Exact same as first file */
+        footer {
+            position: relative;
+            width: 100%;
+            background-color: #08061b;
+            padding: 30px 0 20px;
+            text-align: center;
+            margin-top: 0;
+            border-top: 2px solid #C19A6B;
+            box-shadow: 0 -8px 20px rgba(0,0,0,0.6);
+        }
+
+        .footer-content {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #c9c9c9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: #C19A6B;
+        }
+
+        .copyright {
+            color: #777;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #C19A6B;
+            transform: translateY(-2px);
+        }
+
+        /* Newsletter Popup - Same as first file */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 9, 41, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .popup-wrapper {
+            position: relative;
+            overflow: visible;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .popup-wrapper::before,
+        .popup-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #C19A6B;
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(0.6);
+            z-index: 10;
+        }
+
+        .popup-wrapper::before {
+            top: -15px;
+            left: -15px;
+            border-right: none;
+            border-bottom: none;
+            transform-origin: top left;
+        }
+
+        .popup-wrapper::after {
+            bottom: -15px;
+            right: -15px;
+            border-left: none;
+            border-top: none;
+            transform-origin: bottom right;
+        }
+
+        .popup-overlay.active .popup-wrapper::before,
+        .popup-overlay.active .popup-wrapper::after {
+            animation: cornerIn 0.9s cubic-bezier(.2,.9,.2,1) forwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes cornerIn {
+            0%   { opacity: 0; transform: scale(0.3); }
+            70%  { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .popup {
+            background: linear-gradient(135deg, #1a1449 0%, #241b5c 100%);
+            padding: 25px 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transform: scale(0.7);
+            transition: transform 0.4s ease;
+            color: #fff;
+            position: relative;
+        }
+
+        .popup h2 {
+            margin-bottom: 12px;
+            font-size: 20px;
+            color: #f5f5f5;
+        }
+
+        .popup p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .popup input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(87, 65, 48, 0.5);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            background: #0d0929;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        .popup input::placeholder {
+            color: #aaa;
+        }
+
+        .popup-btn {
+            background: #C19A6B;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .popup-btn:hover {
+            background: #6b4d36;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #888;
+            transition: color 0.3s;
+            z-index: 11;
+        }
+
+        .popup-close:hover {
+            color: #fff;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-overlay.active .popup {
+            transform: scale(1);
+        }
+
+        /* Mobile-specific improvements - Same as first file */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .glow-title {
+                font-size: 22px;
+            }
+            
+            .auto-text p,
+            .auto-info-inner,
+            .auto-ceo-text p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 15px;
+            }
+            
+            .logo-container img {
+                height: 45px;
+            }
+            
+            .hamburger-btn {
+                font-size: 26px;
+                min-width: 40px;
+                min-height: 40px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .glow-title {
+                font-size: 20px;
+            }
+            
+            .auto-text p,
+            .auto-info-inner,
+            .auto-ceo-text p {
+                font-size: 13px;
+            }
+            
+            .footer-links a {
+                font-size: 13px;
+            }
+            
+            .social-icons a {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            
+            .footer-logo img {
+                height: 55px;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            nav a:hover,
+            .footer-links a:hover,
+            .social-icons a:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Sticky Navigation -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-container">
+                <a href="main.html">
+                    <img src="assets/logoCamelv2.png" alt="E.A.C Insurance Agencies & Consultants logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                </a>
+            </div>
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <nav>
+            <ul id="navMenu">
+                <li><a href="main.html"><i class="fas fa-home"></i> Αρχική</a></li>
+                <li><a href="auto.html"><i class="fas fa-car"></i> Αυτοκίνητο</a></li>
+                <li><a href="health.html"><i class="fas fa-heartbeat"></i> Υγεία</a></li>
+                <li><a href="life.html"><i class="fas fa-house-user"></i> Κατοικία</a></li>
+                <li><a href="business.html"><i class="fas fa-briefcase"></i> Επιχείρηση</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Επικοινωνία</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section 1 - Auto Insurance Highlight -->
+    <section class="auto-highlight-box">
+        <div class="corner-box">
+            <div class="auto-container">
+                <!-- Image -->
+                <div class="auto-image">
+                    <img src="assets/auto-prime.webp" alt="Εξατομικευμένη Ασφάλεια Αυτοκινήτου" onerror="this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80'">
+                </div>
+
+                <!-- Text -->
+                <div class="auto-text">
+                    <h2 class="glow-title">Ασφάλεια Αυτοκινήτου που Σας Προστατεύει Πραγματικά</h2>
+                    <p>
+                        Στην E.A.C διαλέγουμε μαζί excess και όρους, ώστε να πληρώνετε για κάλυψη — όχι για υποσχέσεις. Το αυτοκίνητό σας δεν είναι τυπική περίπτωση, γι' αυτό η ασφάλειά σας δεν πρέπει να είναι τυπική λύση.<br><br>
+                        
+                        Εξετάζουμε τον τρόπο οδήγησής σας, την αξία του οχήματός σας, την περιοχή που κυκλοφορείτε και τον προϋπολογισμό σας για να χτίσουμε κάλυψη που λειτουργεί όταν την χρειάζεστε.<br><br>
+                        
+                        Εξοικονόμηση 25-40% με προσαρμοσμένα excess και εκπτώσεις βάσει χιλιομέτρων. 24/7 οδική βοήθεια σε όλη την Κύπρο και ΕΕ. Aντικατάσταση οχήματος σε περίπτωση ατυχήματος. Claims που επεξεργάζονται σε 24-48 ώρες. Άμεση επικοινωνία με εμάς - όχι call centers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 - Our Expertise in Car Insurance -->
+    <section class="auto-info-section">
+        <h2 class="section-title">Γνωρίζουμε την Κυπριακή Ασφαλιστική Αγορά Αυτοκινήτου</h2>
+        <div class="auto-info-inner">
+            <p>
+                Η ασφάλεια αυτοκινήτου στην Κύπρο έχει γίνει πιο περίπλοκη με νέους κανονισμούς, διαφορετικές καλύψεις και συνεχώς μεταβαλλόμενες τιμές. Ποια εταιρεία προσφέρει την καλύτερη τιμή για το προφίλ σας; Τι καλύψεις χρειάζεστε πραγματικά;<br><br>
+                
+                Με πάνω από 15 χρόνια εμπειρίας στην κυπριακή ασφαλιστική αγορά, γνωρίζουμε ακριβώς ποιες ασφαλιστικές έχουν τη γρηγορότερη διεκπεραίωση claims στην Κύπρο, ποιες προσφέρουν τις καλύτερες εκπτώσεις για νέους οδηγούς ή οικογένειες, ποια συνεργεία επισκευής δέχονται κάθε ασφαλιστική χωρίς προβλήματα, και πώς να αποφύγετε κρυφές χρεώσεις και περιορισμούς που μπορεί να σας κοστίσουν.<br><br>
+                
+                Δεν απλώς σας πουλάμε ασφάλεια - σας καθοδηγούμε για να πάρετε τη μέγιστη προστασία στην καλύτερη τιμή. Αυτή είναι η διαφορά του να συνεργάζεστε με έμπειρο broker αντί για online σύγκριση τιμών.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3 - CEO Message -->
+    <section class="auto-ceo-section">
+        <div class="corner-box">
+            <div></div> <!-- Needed for the ::after pseudo-elements -->
+            <div class="auto-ceo-container">
+                <div class="auto-ceo-image">
+                    <img src="assets/andros-prime.webp" alt="Άνδρος - E.A.C Insurance Agencies & Consultants" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="auto-ceo-text">
+                    <h2 class="glow-title">Γιατί η Ασφάλεια Αυτοκινήτου Είναι Περισσότερο από Υποχρέωση</h2>
+                    <p>
+                        "Η ασφάλεια αυτοκινήτου δεν είναι απλά νομική υποχρέωση - είναι προστασία για εσάς, την οικογένειά σας και την οικονομική σας ασφάλεια. Ένα ατύχημα μπορεί να αλλάξει τη ζωή σας σε δευτερόλεπτα.<br><br>
+                        
+                        Έχω δει πολλούς πελάτες που επέλεγαν την πιο φτηνή ασφάλεια μόνο και μόνο για να συμμορφωθούν με το νόμο, μέχρι που είχαν ατύχημα και ανακάλυψαν ότι δεν είχαν επαρκή κάλυψη. Έχω δει και άλλους που πλήρωναν υπερβολικά για καλύψεις που δεν χρειάζονταν.<br><br>
+                        
+                        Ο στόχος μου είναι απλός: να βρούμε μαζί τη σωστή ισορροπία. Κάλυψη που σας προστατεύει πλήρως όταν την χρειάζεστε, σε τιμή που δεν επιβαρύνει υπερβολικά τον προϋπολογισμό σας, με εταιρεία που θα σταθεί δίπλα σας σε δύσκολες στιγμές."<br><br>
+                        
+                        Η δέσμευσή μας για την ασφάλεια αυτοκινήτου: Πλήρης διαφάνεια για τις καλύψεις και τους περιορισμούς. Προσωπική υποστήριξη σε κάθε claim - χειρίζομαι τη γραφειοκρατία. Ετήσια επανεξέταση για να μείνετε ανταγωνιστικοί. Άμεση επικοινωνία με εμάς στο +357 96660113 - όχι αναμονή στο τηλέφωνο.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logoCamelv2.png" alt="E.A.C - Insurance Broker logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Σχετικά με την E.A.C</a>
+                <a href="contact.html">Επικοινωνία</a>
+                <a href="#">Πολιτική Απορρήτου</a>
+                <a href="#">Συχνές Ερωτήσεις</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/eacinsurance/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/andros.eacinsurance/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/andros-panayiotou-a6392483?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.link/r895s2"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <div style="text-align: center; margin: 20px 0; color: #c9c9c9; text-decoration: none; transition: color 0.3s ease; font-size: 16px;">
+                <p><strong>Τηλ:</strong> +357 96660113</p>
+                <p><strong>Γραφείο:</strong> Λεμεσός | <strong>Εξυπηρέτηση:</strong> Όλη η Κύπρος</p>
+                <p><strong>Ώρες:</strong> Δευτ-Παρ 8ΠΜ-6ΜΜ | <strong>Επείγοντα:</strong> 24/7</p>
+            </div>
+        
+            <p class="copyright">© 2025 TripleAI Consultants. Με την επιφύλαξη παντός δικαιώματος.</p>
+        </div>
+    </footer>
+
+    <!-- Newsletter Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-wrapper">
+            <div class="popup" id="popupBox">
+                <button class="popup-close" id="popupClose">&times;</button>
+                <h2>Δωρεάν Ανάλυση Ασφάλειας Αυτοκινήτου</h2>
+                <p>Μάθετε αν πληρώνετε παραπάνω για την ασφάλεια του αυτοκινήτου σας ή έχετε ελλιπή κάλυψη. Κλείστε 15-λεπτη συνάντηση με τον Άνδρο στο +357 96660113.</p>
+                <input type="email" placeholder="Το email σας">
+                <input type="tel" placeholder="Το τηλέφωνό σας">
+                <button class="popup-btn" onclick="window.location.href='tel:+35796660113'">Κλείστε Ραντεβού Τώρα</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Newsletter Popup
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+
+        function showPopup() {
+            popupOverlay.classList.add('active');
+        }
+
+        function hidePopup() {
+            popupOverlay.classList.remove('active');
+        }
+
+        // Close popup when clicking the close button
+        popupClose.addEventListener('click', hidePopup);
+
+        // Close popup when clicking outside of it
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                hidePopup();
+            }
+        });
+
+        // Auto-show popup after 3 seconds
+        setTimeout(showPopup, 3000);
+
+        // Get the current file name from the URL
+        const currentPage = window.location.pathname.split('/').pop();
+
+        // Get all navigation links
+        const navLinks = document.querySelectorAll("nav a");
+
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute("href");
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            }
+        });
+
+        // Hamburger Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburgerBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Change hamburger icon to X when menu is open
+                const icon = hamburgerBtn.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburgerBtn.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!hamburgerBtn.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    hamburgerBtn.querySelector('i').className = 'fas fa-bars';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+<script src="https://files.bpcontent.cloud/2025/08/31/06/20250831060030-72DVBA9B.js" defer></script>
+    <title>Επικοινωνία | E.A.C Insurance Agencies & Consultants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0929;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header - Mobile Optimized */
+        header {
+            background-color: #08061b;
+            padding: 10px 15px 5px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid #C19A6B;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(193, 154, 107, 0.1);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            height: 35px;
+            width: auto;
+        }
+
+        .slogan {
+            font-size: 14px;
+            font-weight: 700;
+            text-align: right;
+            max-width: 200px;
+            line-height: 1.2;
+        }
+
+        .slogan-part1 {
+            color: #C19A6B;
+        }
+
+        .slogan-part2 {
+            color: white;
+        }
+
+        nav {
+            margin-top: 5px;
+            width: 100%;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            min-width: 90px;
+        }
+
+        nav li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background-color: rgba(193, 154, 107, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 3px;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            background: linear-gradient(to right, transparent, rgba(87, 65, 48, 0.4), transparent);
+            color: #fff;
+        }
+
+        nav a:hover::before, nav a.active::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 2px;
+            background: #C19A6B;
+            border-radius: 2px 2px 0 0;
+        }
+
+        /* Contact Section - Mobile Optimized */
+        .contact-wrapper {
+            max-width: 100%;
+            margin: 50px auto;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        .corner-box {
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Smaller corner decorations for mobile */
+        .corner-box::before,
+        .corner-box::after,
+        .corner-box div::before,
+        .corner-box div::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #C19A6B;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .corner-box::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-box::after {
+            top: 0;
+            right: 0;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-box div::before {
+            bottom: 0;
+            left: 0;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-box div::after {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Mobile-first contact layout */
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 16px;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+        }
+
+        .contact-info h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #C19A6B;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .contact-item i {
+            color: #C19A6B;
+            margin-right: 12px;
+            font-size: 18px;
+            min-width: 25px;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #C19A6B;
+        }
+
+        /* Mobile-optimized contact icons */
+        .contact-icons-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            height: 200px;
+            width: 100%;
+        }
+
+        .big-icon-button {
+            color: #C19A6B;
+            font-size: 80px;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(193, 154, 107, 0.1);
+            border: 2px solid rgba(193, 154, 107, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            min-width: 120px;
+        }
+
+        .big-icon-button:hover {
+            transform: scale(1.05);
+            color: #fff;
+            background: rgba(193, 154, 107, 0.2);
+            border-color: #C19A6B;
+        }
+
+        /* Footer - Mobile Optimized */
+        footer {
+            position: relative;
+            width: 100%;
+            background-color: #08061b;
+            padding: 30px 0 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px solid #C19A6B;
+            box-shadow: 0 -8px 20px rgba(0,0,0,0.6);
+        }
+
+        .footer-content {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #c9c9c9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: #C19A6B;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #C19A6B;
+            transform: translateY(-2px);
+        }
+
+        .footer-content > div[style] {
+            text-align: center;
+            margin: 15px 0;
+            color: #c9c9c9;
+            font-size: 14px;
+        }
+
+        .footer-content > div[style] p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .copyright {
+            color: #777;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        /* Mobile-specific breakpoints */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            .slogan {
+                font-size: 13px;
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            nav ul {
+                gap: 2px;
+            }
+            
+            nav li {
+                min-width: 85px;
+            }
+            
+            nav a {
+                font-size: 10px;
+                padding: 5px 2px;
+            }
+            
+            .contact-info h2 {
+                font-size: 22px;
+            }
+            
+            .contact-item {
+                font-size: 15px;
+            }
+            
+            .big-icon-button {
+                font-size: 70px;
+                min-height: 110px;
+                min-width: 110px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 8px 10px 5px 10px;
+            }
+            
+            .slogan {
+                font-size: 12px;
+            }
+            
+            nav a {
+                font-size: 9px;
+                padding: 4px 1px;
+            }
+            
+            nav li {
+                min-width: 75px;
+            }
+            
+            .contact-wrapper {
+                margin: 30px auto;
+            }
+            
+            .corner-box {
+                padding: 15px;
+            }
+            
+            .corner-box::before,
+            .corner-box::after,
+            .corner-box div::before,
+            .corner-box div::after {
+                width: 15px;
+                height: 15px;
+            }
+            
+            .contact-section {
+                gap: 25px;
+            }
+            
+            .contact-info h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .contact-item {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .contact-item i {
+                font-size: 16px;
+                min-width: 22px;
+            }
+            
+            .contact-icons-box {
+                gap: 25px;
+                height: 160px;
+            }
+            
+            .big-icon-button {
+                font-size: 60px;
+                min-height: 90px;
+                min-width: 90px;
+                padding: 12px;
+                border-radius: 12px;
+            }
+            
+            .footer-links a {
+                font-size: 13px;
+            }
+            
+            .footer-content > div[style] p {
+                font-size: 13px;
+            }
+            
+            .social-icons a {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .contact-wrapper {
+                margin: 20px auto;
+            }
+            
+            .contact-section {
+                flex-direction: row;
+                gap: 30px;
+                align-items: center;
+            }
+            
+            .contact-info {
+                flex: 1;
+                text-align: left;
+            }
+            
+            .contact-item {
+                justify-content: flex-start;
+            }
+            
+            .contact-icons-box {
+                flex: 1;
+                height: 120px;
+                gap: 30px;
+            }
+            
+            .big-icon-button {
+                font-size: 50px;
+                min-height: 80px;
+                min-width: 80px;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .big-icon-button:hover {
+                transform: scale(1.02);
+            }
+            
+            nav a:hover,
+            .footer-links a:hover,
+            .social-icons a:hover {
+                transform: none;
+            }
+        }
+
+        /* High DPI display optimization */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .logo-container img,
+            .footer-logo img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Accessibility improvements for mobile */
+        @media (prefers-reduced-motion: reduce) {
+            .big-icon-button,
+            nav a,
+            .social-icons a {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-container">
+                <a href="main.html">
+                    <img src="assets/logoCamelv2.png" alt="E.A.C Insurance Agencies & Consultants logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                </a>
+            </div>
+            <div class="slogan">
+                <span class="slogan-part1">Διαφορετικοί γιατί</span><br>
+                <span class="slogan-part2">νοιαζόμαστε</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main.html"><i class="fas fa-home"></i> Αρχική</a></li>
+                <li><a href="auto.html"><i class="fas fa-car"></i> Αυτοκίνητο</a></li>
+                <li><a href="health.html"><i class="fas fa-heartbeat"></i> Υγεία</a></li>
+                <li><a href="life.html"><i class="fas fa-house-user"></i> Κατοικία</a></li>
+                <li><a href="business.html"><i class="fas fa-briefcase"></i> Επιχείρηση</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Επικοινωνία</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Section with Decorative Corners -->
+    <section class="contact-wrapper">
+        <div class="corner-box">
+            <div>
+                <div class="contact-section">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h2>Επικοινωνήστε μαζί μας</h2>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+35796660113">+357 96660113</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:e.a.c.insurances@outlook.com">e.a.c.insurances@outlook.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Λεμεσός – Εξυπηρέτηση σε όλη την Κύπρο</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Δευτ-Παρ 8ΠΜ-6ΜΜ | Επείγοντα: 24/7</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Icons Container -->
+                    <div class="contact-icons-box">
+                        <a href="https://wa.me/35796660113" target="_blank" class="big-icon-button" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:e.a.c.insurances@outlook.com" class="big-icon-button" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logoCamelv2.png" alt="E.A.C - Insurance Broker logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Σχετικά με την E.A.C</a>
+                <a href="contact.html">Επικοινωνία</a>
+                <a href="#">Πολιτική Απορρήτου</a>
+                <a href="#">Συχνές Ερωτήσεις</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/eacinsurance/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/andros.eacinsurance/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/andros-panayiotou-a6392483?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.link/r895s2"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <div style="text-align: center; margin: 20px 0; color: #c9c9c9; text-decoration: none; transition: color 0.3s ease; font-size: 16px;">
+                <p><strong>Τηλ:</strong> +357 96660113</p>
+                <p><strong>Γραφείο:</strong> Λεμεσός | <strong>Εξυπηρέτηση:</strong> Όλη η Κύπρος</p>
+                <p><strong>Ώρες:</strong> Δευτ-Παρ 8ΠΜ-6ΜΜ | <strong>Επείγοντα:</strong> 24/7</p>
+            </div>
+            
+            <p class="copyright">© 2025 TripleAI Consultants. Με την επιφύλαξη παντός δικαιώματος.</p>
+        </div>
+    </footer>
+</body>
+</html>
