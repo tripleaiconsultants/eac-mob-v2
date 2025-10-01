@@ -1558,7 +1558,7 @@
             }
         });
 
-        setTimeout(showPopup, 3000);
+        setTimeout(showPopup, 5000);
 
         // Service Cards Animation
         const cards = document.querySelectorAll('.service-card');
@@ -1680,6 +1680,21 @@
             });
         });
     </script>
+    
+   <script>
+    // Only auto-open chatbot on first visit
+    window.botpress.on('webchat:ready', () => {
+        // Check if user has seen the chatbot before
+        if (!localStorage.getItem('chatbotOpened')) {
+            setTimeout(() => {
+                window.botpress.open();
+                // Mark as opened
+                localStorage.setItem('chatbotOpened', 'true');
+            }, 1000);
+        }
+    });
+</script>
 </body>
 
 </html>
+
