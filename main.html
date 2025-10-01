@@ -1712,21 +1712,10 @@
         });
     </script>
     
-  <script>
-        // Wait a bit for Botpress to fully load
-        setTimeout(() => {
-            if (window.botpress && window.botpress.on) {
-                window.botpress.on('webchat:ready', () => {
-                    setTimeout(() => {
-                        window.botpress.open();
-                    }, 500);
-                });
-            }
-        }, 300);
-    </script>
 </body>
 
 </html>
+
 
 
 
